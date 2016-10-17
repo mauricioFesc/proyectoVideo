@@ -2,12 +2,17 @@
 #include<stdlib.h>
 int main()
 {
-  int conteop=0,conteon=0,num;
+  int conteop,conteon,num;
+  char dato;
   printf("\n\t Programa conteo de positivos y negativos");
-  printf("\n\t Ingrese un numero\t");
-  scanf("%i",&num);
-  while(num!=0)
+  do
   {
+    conteop=0;
+    conteon=0;
+    printf("\n\t Ingrese un numero\t");
+    scanf("%i",&num);
+    while(num!=0)
+    {
      if(num>0)
      {
        conteop++;
@@ -19,8 +24,12 @@ int main()
 
      printf("\n\t Ingrese un numero\t");
      scanf("%i",&num);
-  }
-  printf("\n\t Usted ingreso %i numeros enteros positivos y %i negativos\n",conteop,conteon);
+    }
+    printf("\n\t Usted ingreso %i numeros enteros positivos y %i negativos\n",conteop,conteon);
+    fflush(stdin);
+    printf("\n\t Desea hacer otro conteo? s/n\t");
+    scanf("%c",&dato);
+  }while(dato=='s' || dato=='S');
   system("PAUSE");
   return 0;
 }
